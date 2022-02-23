@@ -5,9 +5,12 @@ const EditUserForm = (props) => {
 
     console.log(props.currentUser)
 
+    //--------------------------------------------------------------------//
+    //Nueva forma de implementar el useForm desde la v7s
     const {register, handleSubmit, formState: {errors}, setValue} = useForm(
         {defaultValues: props.currentUser}
     )
+    //--------------------------------------------------------------------//
 
     setValue('name', props.currentUser.name);
     setValue('username', props.currentUser.username);
@@ -25,6 +28,7 @@ const EditUserForm = (props) => {
                 <label>Name</label>
                 <input 
                     type="text" 
+                    //---------------------------------------------//
                     //Nueva forma de hacer los registers desde la v7
                     {...register("name", {
                         required: {
@@ -33,6 +37,7 @@ const EditUserForm = (props) => {
                         }
                     }) 
                     }
+                    //---------------------------------------------//
                 />
                 <div>
                     {errors?.name?.message}
@@ -41,6 +46,7 @@ const EditUserForm = (props) => {
                 <label>Username</label>
                 <input 
                     type="text" 
+                    //---------------------------------------------//
                     //Nueva forma de hacer los registers desde la v7
                     {...register("username", {
                         required: {
@@ -49,6 +55,7 @@ const EditUserForm = (props) => {
                         }
                     }) 
                     }
+                    //---------------------------------------------//
                 />
                 <div>
                     {errors?.username?.message}

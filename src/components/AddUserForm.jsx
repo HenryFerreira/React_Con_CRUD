@@ -3,7 +3,10 @@ import { useForm } from 'react-hook-form';
 
 const AddUserForm = (props) => {
 
+    //--------------------------------------------------------------------//
+    //Nueva forma de implementar el useForm desde la v7s
     const {register, handleSubmit, formState: {errors}} = useForm()
+    //--------------------------------------------------------------------//
 
     const onSubmit = (data, e) => {
         props.addUser(data)
@@ -16,6 +19,7 @@ const AddUserForm = (props) => {
                 <label>Name</label>
                 <input 
                     type="text" 
+                    //---------------------------------------------//
                     //Nueva forma de hacer los registers desde la v7
                     {...register("name", {
                         required: {
@@ -24,6 +28,7 @@ const AddUserForm = (props) => {
                         }
                     }) 
                     }
+                    //---------------------------------------------//
                 />
                 <div>
                     {errors?.name?.message}
@@ -32,6 +37,7 @@ const AddUserForm = (props) => {
                 <label>Username</label>
                 <input 
                     type="text" 
+                    //---------------------------------------------//
                     //Nueva forma de hacer los registers desde la v7
                     {...register("username", {
                         required: {
@@ -40,6 +46,7 @@ const AddUserForm = (props) => {
                         }
                     }) 
                     }
+                    //---------------------------------------------//
                 />
                 <div>
                     {errors?.username?.message}
