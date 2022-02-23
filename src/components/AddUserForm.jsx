@@ -6,9 +6,7 @@ const AddUserForm = (props) => {
     const {register, handleSubmit, formState: {errors}} = useForm()
 
     const onSubmit = (data, e) => {
-
         props.addUser(data)
-
         e.target.reset();
     }
 
@@ -39,10 +37,6 @@ const AddUserForm = (props) => {
                         required: {
                             value: true,
                             message: 'Campo obligatorio'
-                        },
-                        minLength: {
-                            value:2,
-                            message: 'Minimo 2 letras'
                         }
                     }) 
                     }
